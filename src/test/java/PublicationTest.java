@@ -21,6 +21,6 @@ public class PublicationTest {
 
         //THEN
         List<Story> postedStories = feedControler.feed();
-        Assert.assertEquals(Arrays.asList(new Story("hi info4")),postedStories);
+        Assert.assertEquals(Arrays.asList(new Story("hi INFO4")),postedStories);
     }
 }
