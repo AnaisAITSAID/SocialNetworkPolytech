@@ -6,5 +6,6 @@ public class Story {
 
     public Story(String content){
         this.content = content;
+
     }
 }

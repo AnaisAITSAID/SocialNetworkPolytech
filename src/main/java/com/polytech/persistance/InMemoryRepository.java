@@ -7,6 +7,7 @@ import java.util.List;
 
 public class InMemoryRepository {
 
+    
     List<Story> postedStories = new ArrayList<Story>();
 
 }

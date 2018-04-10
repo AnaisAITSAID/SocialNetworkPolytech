@@ -11,6 +11,7 @@ public class PublicationTest {
     @Test
     public void should_post_story(){
 
+        
         //GIVEN
         String story = "hi INFO4";
         FeedControler feedControler = new FeedControler();

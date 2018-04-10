@@ -8,5 +8,6 @@ public class FeedService {
 
     public List<Story> findAll() {
         return null;
+
     }
 }

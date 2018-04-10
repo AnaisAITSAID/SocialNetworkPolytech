@@ -13,6 +13,7 @@ public class FeedControler {
 
     public void post(String story) {
         publicationService.share(new Story(story));
+
     }
 
     public List<Story> feed() {
