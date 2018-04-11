@@ -5,9 +5,15 @@ import com.polytech.persistance.StoryRepository;
 import com.polytech.services.FeedService;
 import com.polytech.services.PublicationService;
 import com.polytech.services.Story;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+@Controller
 public class FeedControler {
 
     PublicationService publicationService;
@@ -17,12 +23,16 @@ public class FeedControler {
         this.publicationService = publicationService;
         this.feedService = feedService;
     }
-    public void post(String story) {
-        publicationService.share(new Story(story));
-
+    @RequestMapping(value="/share", method=RequestMethod.POST)
+    public String post(String content) {
+        publicationService.share(new Story(content));
+        return  "redirect:/feed";
     }
 
-    public List<Story> feed() {
-        return feedService.findAll();
+    @RequestMapping(value="/feed",method = RequestMethod.GET)
+    public String feed(Model model) {
+        List<Story> postedStories = feedService.findAll();
+        model.addAttribute("postedStories",postedStories);
+        return "feed";
     }
 }

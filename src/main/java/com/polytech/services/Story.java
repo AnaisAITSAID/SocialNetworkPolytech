@@ -24,4 +24,8 @@ public class Story {
 
         return Objects.hash(content);
     }
+
+    public String getContent() {
+        return content;
+    }
 }
