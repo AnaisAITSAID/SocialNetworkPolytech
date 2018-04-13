@@ -57,26 +57,18 @@
 <div class="container">
 
     <div class="starter-template">
-        <div class="row">
-            <form action="/share" method="post" role="form">
-                <legend>Polytech Social Network</legend>
+        <form action="/register" method="post" role="form">
+            <legend>Register</legend>
 
-                <div class="form-group">
+            <div class="form-group">
+                <label for="Login">Login</label>
+                <input type="text" class="form-control" name="Login" id="Login">
+            </div>
 
-                    <textarea class="form-control" name="content" id="" placeholder="Share your thoughts"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary pull-right">Submit</button>
-            </form>
-        </div>
+            
 
-        <div class="row">
-            <ul class="list-group col-md_12">
-                <li class="list-group-item" th:each="story :${postedStories}">
-                    <span th:text="${story.content}"></span>
-                </li>
-
-            </ul>
-        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
     </div>
 
